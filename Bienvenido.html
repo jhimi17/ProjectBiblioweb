@@ -1,11 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Advanced Side Menu</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
 </head>
-<body>
-    <h1> holaaaaaa</h1>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <div class="w-16 bg-gray-700 text-white flex-none overflow-hidden transition-all duration-300" id="sidebar">
+            <button class="text-xl text-white focus:outline-none p-4 ml-1" id="toggleSidebar">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+        <div class="flex-grow bg-white">
+            <div class="flex justify-between items-center px-4 py-2 bg-gray-700 text-white">
+                <div class="space-x-4">
+                    <a href="#" class="text-white"><i class='bx bxs-home text-lg'></i> Inicio</a>
+                    <a href="#" class="text-white"><i class='bx bxs-group text-lg'></i> Grupos</a>
+                    <a href="#" class="text-white"><i class='bx bxs-bell text-lg'></i> Notificaciones</a>
+                    <a href="#" class="text-white"><i class='bx bxs-user text-lg'></i> Perfil</a>
+                </div>
+            </div>
+        </div>
+        <div class="hidden bg-gray-700 text-white w-35 y-40 overflow-hidden transition-all duration-300 absolute top-16 left-0 h-screen" id="expandedSidebar">
+            <ul class="pt-30 space-y-30">
+                <li><a href="#" class="flex items-center justify-start px-4 py-2 transition-colors hover:bg-gray-800">
+                    <i class='bx bxs-file text-xl'></i>
+                    <span class="ml-2">Solicitud de Documento</span>
+                </a></li>
+                <li><a href="#" class="flex items-center justify-start px-4 py-2 transition-colors hover:bg-gray-800">
+                    <i class='bx bxs-id-card text-xl'></i>
+                    <span class="ml-2">Solicitud de Carnet</span>
+                </a></li>
+                <li><a href="#" class="flex items-center justify-start px-4 py-2 transition-colors hover:bg-gray-800">
+                    <i class='bx bx-check-circle text-xl'></i>
+                    <span class="ml-2">Estado de Solicitud</span>
+                </a></li>
+                <li><a href="#" class="flex items-center justify-start px-4 py-2 transition-colors hover:bg-gray-800">
+                    <i class='bx bxs-group text-xl'></i>
+                    <span class="ml-2">Grupos</span>
+                </a></li>
+                <li><a href="#" class="flex items-center justify-start px-4 py-2 transition-colors hover:bg-gray-800">
+                    <i class='bx bx-cog text-xl'></i>
+                    <span class="ml-2">Configuración</span>
+                </a></li>
+                <li><a href="#" class="flex items-center justify-start px-4 py-2 transition-colors hover:bg-gray-800">
+                    <i class='bx bxs-question-circle text-xl'></i>
+                    <span class="ml-2">Ayuda y Soporte T.</span>
+                </a></li>
+                <li><a href="#" class="flex items-center justify-start px-4 py-2 transition-colors hover:bg-gray-800">
+                    <i class='bx bx-log-out text-xl'></i>
+                    <span class="ml-2">Cerrar Sesión</span>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const toggleSidebarButton = document.getElementById("toggleSidebar");
+        const expandedSidebar = document.getElementById("expandedSidebar");
+        
+        toggleSidebarButton.addEventListener("click", () => {
+            expandedSidebar.classList.toggle("hidden");
+        });
+    </script>
 </body>
 </html>
